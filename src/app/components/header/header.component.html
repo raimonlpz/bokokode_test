@@ -4,8 +4,8 @@
 
         <div class="logo"><img src="../../../assets/logo.svg" alt="Bejamas Logo" /></div>
         <div class="cart">
-            <app-cart></app-cart>
-            <img src="../../../assets/cart.svg" alt="Cart" />
+            <app-cart #cart></app-cart>
+            <img src="../../../assets/cart.svg" alt="Cart" (click)="openCartModal()" />
         </div>
 
     </div>

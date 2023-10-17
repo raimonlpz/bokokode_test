@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { map, Observable, Subscription } from 'rxjs';
 import { Product } from 'src/app/models/interfaces';
@@ -18,6 +18,8 @@ export class CartComponent {
 
   products!: Product[];
 
+  @ViewChild('modal') modal!: ElementRef;
+
   constructor(private store: Store<CartState>) {}
 
   ngOnInit(): void {
@@ -25,12 +27,13 @@ export class CartComponent {
     this.cartSub = this.cartState$
       .pipe(map(state => {
         this.products = state.cart
+        if (this.products.length) {
+          this.onOpenModal()
+        }
       }))
       .subscribe();
+
   }
-
-
-  openDialog() { }
 
 
   onClearProducts(): void {
@@ -38,6 +41,15 @@ export class CartComponent {
       type: CartActionType.REM_ALL_PRODUCTS
     })
   }
+
+  onCloseModal(): void {
+    this.modal.nativeElement.style.display = 'none';
+  }
+
+  onOpenModal(): void {
+    this.modal.nativeElement.style.display = 'block';
+  }
+
 
 
   ngOnDestroy(): void {

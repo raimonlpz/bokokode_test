@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.getProducts({ categories, page, order });
   }
 
-  
+
   getProducts({ categories, page, order } : {
       categories: Array<Category>,
       order?: { key: OrderKey, type: OrderType },
@@ -68,7 +68,7 @@ export class HomeComponent implements OnInit, OnDestroy {
           if (!this.featuredProduct) {
             this.featuredProduct = this.products.find(p => p.featured);
           }
-          
+
         }
       });
   }

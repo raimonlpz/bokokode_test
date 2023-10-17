@@ -1,6 +1,7 @@
 {
   "name": "bokokode-test",
   "version": "0.0.0",
+  "author": "Raimon López Mor",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

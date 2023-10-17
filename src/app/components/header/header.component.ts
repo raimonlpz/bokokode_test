@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { MatMenuTrigger } from '@angular/material/menu';
+import { CartComponent } from '../cart/cart.component';
 
 
 @Component({
@@ -9,9 +9,14 @@ import { MatMenuTrigger } from '@angular/material/menu';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  
-  // @ViewChild('menuTrigger') menuTrigger!: MatMenuTrigger;
+
+  @ViewChild('cart') cart!: CartComponent;
+
   constructor(public dialog: MatDialog) {}
+
+  openCartModal(): void {
+    this.cart.onOpenModal();
+  }
 
 
 }

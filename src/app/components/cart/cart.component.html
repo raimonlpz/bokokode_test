@@ -1,12 +1,12 @@
-<div class="cart-counter" *ngIf="products.length">
+<div class="cart-counter" *ngIf="products.length" (click)="onOpenModal()">
   {{ products.length }}
 </div>
 
 
-<div class="cart-modal">
+<div class="cart-modal" #modal>
   <div class="cart-modal-content">
 
-    <div class="close">
+    <div class="close" (click)="onCloseModal()">
       <img src="../../../assets/close.svg" alt="Close Cart" />
     </div>
 
