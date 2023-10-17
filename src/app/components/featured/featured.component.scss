@@ -17,10 +17,15 @@
             color: white;
             background-color: black;
             padding: .25rem 2rem;
+            transition: .6s all cubic-bezier(0.075, 0.82, 0.165, 1);
         }
 
         button:hover {
             cursor: pointer;
+
+            background: white;
+            color: black;
+            border: .5px solid black;
         }
     }
 
@@ -84,7 +89,7 @@
         }
 
 
-        
+
         &-related {
             width: 50%;
             height: 100%;

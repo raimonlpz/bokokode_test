@@ -1,3 +1,37 @@
 <div class="cart-counter" *ngIf="products.length">
   {{ products.length }}
 </div>
+
+
+<div class="cart-modal">
+  <div class="cart-modal-content">
+
+    <div class="close">
+      <img src="../../../assets/close.svg" alt="Close Cart" />
+    </div>
+
+    <div class="products" *ngIf="products.length">
+      <div class="products-unit" *ngFor="let product of products;">
+        <div class="products-unit-left">
+          <span>
+            {{ product.name }}
+          </span>
+          <span>
+            {{ product.price | currency: 'USD' }}
+          </span>
+        </div>
+        <div class="products-unit-right">
+          <img src="{{ product.image.src }}" />
+        </div>
+      </div>
+    </div>
+
+    <div class="empty" *ngIf="!products.length">
+      Your Cart is empty...
+    </div>
+
+    <div class="divider"></div>
+
+    <button class="clear" (click)="onClearProducts()" [disabled]="!products.length">Clear</button>
+  </div>
+</div>

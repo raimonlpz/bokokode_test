@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { map, Observable, Subscription } from 'rxjs';
 import { Product } from 'src/app/models/interfaces';
+import { CartActionType } from 'src/app/store/cart.actions';
 import { CartState } from 'src/app/store/state.model';
 
 
@@ -30,6 +31,13 @@ export class CartComponent {
 
 
   openDialog() { }
+
+
+  onClearProducts(): void {
+    this.store.dispatch({
+      type: CartActionType.REM_ALL_PRODUCTS
+    })
+  }
 
 
   ngOnDestroy(): void {
