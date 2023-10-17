@@ -1,0 +1,20 @@
+<div 
+    class="product" 
+    *ngIf="product" 
+    [style.width.px]="isRelated ? 150 : 250"
+    [style.height.px]="isRelated ? 300 : 450"
+>
+    <div class="product-img">
+        <img src="{{ product.image.src }}" alt="{{ product.image.alt }}" />
+    </div>
+    <div class="product-data">
+        <span class="product-data-category" [style.fontSize.px]="isRelated ? 12 : 16">{{ product.category | titlecase }}</span>
+        <h6 class="product-data-name"  [style.fontSize.px]="isRelated ? 16 : 20">{{ product.name }}</h6>
+        <span class="product-data-price">{{ product.price | currency: 'USD' }}</span>
+    </div>
+
+
+    <div class="product-bestseller" *ngIf="product.bestseller">Best Seller</div>
+    <div class="product-add_cart" [style.fontSize.rem]="isRelated ? .75 : 1.1" (click)="addToCart(product)">Add to Cart</div>
+
+</div>

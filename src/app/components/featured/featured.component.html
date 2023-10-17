@@ -1,0 +1,35 @@
+
+<div class="featured" *ngIf="featuredProduct">
+
+    <div class="featured-header">
+        <h4>{{ featuredProduct.name }}</h4>
+        <button>Add To Cart</button>
+    </div>
+
+    <div class="featured-img">
+        <img src="{{ featuredProduct.image.src }}" alt="{{ featuredProduct.image.alt }}" />
+        <div>Photo of the day</div>
+    </div>
+
+    <div class="featured-info">
+        <div class="featured-info-description">
+            <h6>About the {{ featuredProduct.name }}</h6>
+            <span>{{ featuredProduct.category | titlecase }}</span>
+            <p>
+                {{ featuredProduct.description }}
+            </p>
+        </div>
+        
+        <div class="featured-info-related">
+            <h6>People also buy</h6>
+            <div>
+                <app-product 
+                    *ngFor="let product of featuredProduct.people_also_buy;" 
+                    [product]="product"
+                    [isRelated]=true
+                ></app-product>
+            </div>
+        </div>
+    </div>
+
+</div>

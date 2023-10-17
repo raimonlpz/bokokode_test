@@ -1,0 +1,12 @@
+
+<mat-label>
+    <img src="../../../assets/sort.svg" alt="Sort" (click)="changeOrderType()" />
+    <span>Sort By &nbsp;</span>
+</mat-label>
+<select matNativeControl (change)="changeOrderKey($event)">
+    <option *ngFor="let opt of orderList" value="{{ opt }}">
+        {{ opt | titlecase }}
+    </option>
+</select>
+
+

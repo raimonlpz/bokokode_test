@@ -1,0 +1,6 @@
+<section class="categories" [formGroup]="categoriesChecked">
+    <h4>Category</h4>
+    <p *ngFor="let category of categories;" class="checkbox">
+        <mat-checkbox formControlName="{{ category }}">&nbsp; &nbsp; {{ category | titlecase }}</mat-checkbox>
+    </p>
+</section>
