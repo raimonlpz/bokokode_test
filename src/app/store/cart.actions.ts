@@ -1,4 +1,4 @@
-import { props, createAction } from '@ngrx/store';
+import { Action } from '@ngrx/store';
 import { Product } from '../models/interfaces';
 
 
@@ -8,18 +8,35 @@ export enum CartActionType {
 }
 
 
-export const AddProductAction = createAction(
-    CartActionType.ADD_PRODUCT,
-    props<{payload: Array<Product>}>
-)
+export class AddProductAction implements ActionWithPayload<Product> {
+  readonly type = CartActionType.ADD_PRODUCT;
+  payload: Product;
 
-export const RemoveProductAction = createAction(
-    CartActionType.REM_PRODUCT,
-    props<{payload: Array<Product>}>
-)
+  constructor(payload: Product) {
+    this.payload = payload;
+  }
+}
+
+export class RemoveProductAction implements ActionWithPayload<Product> {
+  readonly type = CartActionType.ADD_PRODUCT;
+  payload: Product;
+
+  constructor(payload: Product) {
+    this.payload = payload;
+  }
+}
 
 
 
-export type CartAction = 
-    | typeof AddProductAction
-    | typeof RemoveProductAction
+
+export default interface ActionWithPayload<T> extends Action {
+  payload: T;
+}
+
+
+
+
+
+export type CartAction =
+    | AddProductAction
+    | RemoveProductAction

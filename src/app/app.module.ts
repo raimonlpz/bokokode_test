@@ -14,7 +14,7 @@ import { HttpErrorsInterceptor } from './interceptors/http-errors.interceptors';
 import { ProductComponent } from './components/product/product.component';
 import { GridComponent } from './components/grid/grid.component';
 
-import { MatMenuModule, MatMenuTrigger } from '@angular/material/menu';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatCheckboxModule} from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
@@ -28,7 +28,7 @@ import { CartComponent } from './components/cart/cart.component';
 
 
 import { StoreModule } from '@ngrx/store';
-import { cartReducer } from './store/cart.reducer';
+import { CartReducer } from './store/cart.reducer';
 
 
 
@@ -48,6 +48,9 @@ import { cartReducer } from './store/cart.reducer';
   ],
   imports: [
     BrowserModule,
+    StoreModule.forRoot({
+      cart: CartReducer
+    }),
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
@@ -59,9 +62,6 @@ import { cartReducer } from './store/cart.reducer';
     MatMenuModule,
     MatButtonModule,
     MatDialogModule,
-    StoreModule.forRoot({
-      cart: cartReducer
-    })
   ],
   providers: [
     {

@@ -18,7 +18,7 @@
             width: 150px;
 
             img {
-                width: 100%; 
+                width: 100%;
             }
 
             &:hover {
@@ -31,26 +31,16 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            
+
 
             img {
-                width: 30%; 
+                width: 30%;
             }
 
             &:hover {
                 cursor: pointer;
             }
 
-            &-counter {
-                width: 25px;
-                height: 25px;
-                background-color: black;
-                color: white;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                font-size: .85rem;
-            }
         }
     }
 }
