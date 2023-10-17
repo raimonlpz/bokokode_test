@@ -21,7 +21,15 @@ export function CartReducer(
         cart: [...state.cart, (action as ActionWithPayload<Product>).payload]
       }
     case CartActionType.REM_PRODUCT:
-      return { ...state }
+      return {
+        ...state,
+        cart: [...state.cart.filter(p => p._id !== (action as ActionWithPayload<string>).payload)]
+      }
+    case CartActionType.REM_ALL_PRODUCTS:
+      return {
+        ...state,
+        cart: []
+      }
     default:
       return state;
   }
