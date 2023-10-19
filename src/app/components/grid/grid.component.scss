@@ -83,13 +83,20 @@
 
 @media only screen and (max-width: 768px) {
 
-  .grid-content {
-    height: 3150px;
+  .grid {
+    &-header {
+      h4 {
+        font-size: 1rem;
+      }
+    }
 
-    &-products {
-      display: flex;
-      flex-direction: column;
+    &-content {
+      height: 3150px;
+
+      &-products {
+        display: flex;
+        flex-direction: column;
+      }
     }
   }
-
 }
