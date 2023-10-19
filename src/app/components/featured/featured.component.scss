@@ -163,6 +163,13 @@
 // # Tablet #2
 @media only screen and (max-width: 768px) {
 
+  .featured-img {
+    div {
+      font-size: .85rem;
+      padding: .85rem 2.5rem;
+    }
+  }
+
   .featured-info {
     padding-bottom: 30rem;
 
