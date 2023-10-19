@@ -59,12 +59,8 @@ export class GridComponent implements OnInit {
   }
 
 
-  openFilterByCategoriesModal(): void {
-    console.log('hola?')
-    this.openModalCategoriesMobile = true;
+  toggleFilterByCategoriesModal(): void {
+    this.openModalCategoriesMobile = !this.openModalCategoriesMobile;
   }
 
-  closeFilterByCategoriesModal(): void {
-    this.openModalCategoriesMobile = false;
-  }
 }
