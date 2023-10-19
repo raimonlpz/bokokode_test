@@ -107,9 +107,15 @@
 }
 
 
-// @media only screen and (max-width: 414px) {
-//   .product.related {
-//     width: 100px !important;
-//     height: 250px !important;
-//   }
-// }
+@media only screen and (max-width: 414px) {
+  .product {
+    &-bestseller {
+      font-size: .65rem;
+    }
+  }
+
+  .product.related {
+    width: 25vw !important;
+    height: 250px !important;
+  }
+}
