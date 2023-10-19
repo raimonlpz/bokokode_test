@@ -63,7 +63,7 @@
 @media only screen and (max-width: 962px) {
 
   .grid-content {
-      height: 1650px;
+      height: 3050px;
       display: flex;
       flex-direction: column;
 
@@ -91,7 +91,7 @@
     }
 
     &-content {
-      height: 3150px;
+      height: 3800px !important;
 
       &-products {
         display: flex;
