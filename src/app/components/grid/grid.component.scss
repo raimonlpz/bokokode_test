@@ -96,7 +96,7 @@
 
 
   .grid-content {
-      height: 3050px;
+      height: 1700px;
       display: flex;
       flex-direction: column;
 
@@ -124,7 +124,7 @@
     }
 
     &-content {
-      height: 3800px !important;
+      height: 3100px !important;
 
       &-products {
         display: flex;
@@ -140,6 +140,10 @@
   .grid {
     padding: 0 1rem;
     width: 98vw;
+
+    &-content {
+      height: 3850px !important;
+    }
   }
 
   .grid-categoriesMobile {
