@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Product } from 'src/app/models/interfaces';
 import { CartActionType } from 'src/app/store/cart.actions';
