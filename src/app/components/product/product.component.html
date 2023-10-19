@@ -1,6 +1,6 @@
-<div 
-    class="product" 
-    *ngIf="product" 
+<div
+    class="product {{ isRelated ? 'related' : ''}}"
+    *ngIf="product"
     [style.width.px]="isRelated ? 150 : 250"
     [style.height.px]="isRelated ? 300 : 450"
 >

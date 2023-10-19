@@ -1,3 +1,20 @@
+@mixin addToCartBtn {
+  text-transform: uppercase;
+  border: none;
+  color: white;
+  background-color: black;
+  padding: .65rem 2rem;
+  transition: .6s all cubic-bezier(0.075, 0.82, 0.165, 1);
+
+  &:hover {
+    cursor: pointer;
+    background: white;
+    color: black;
+    border: .5px solid black;
+  }
+}
+
+
 .featured {
     width: 100%;
     padding: 3rem 4rem;
@@ -12,20 +29,7 @@
         }
 
         button {
-            text-transform: uppercase;
-            border: none;
-            color: white;
-            background-color: black;
-            padding: .25rem 2rem;
-            transition: .6s all cubic-bezier(0.075, 0.82, 0.165, 1);
-        }
-
-        button:hover {
-            cursor: pointer;
-
-            background: white;
-            color: black;
-            border: .5px solid black;
+          @include addToCartBtn();
         }
     }
 
@@ -63,6 +67,10 @@
         margin-top: 1rem;
         display: flex;
         justify-content: space-between;
+
+        button {
+          display: none;
+        }
 
         &-description {
             width: 50%;
@@ -114,10 +122,28 @@
 
 
 
-// # Mobile
-@media only screen and (max-width: 768px) {
+
+// # Tablet #0
+@media only screen and (max-width: 1280px) {
+  .featured-info {
+
+    &-related {
+      width: 60%;
+    }
+
+    &-description {
+      width: 40%;
+    }
+  }
+}
+
+
+
+// # Tablet #1
+@media only screen and (max-width: 962px) {
   .featured-info {
     flex-direction: column;
+    padding-bottom: 25rem;
 
     &-related {
       width: 100%;
@@ -126,6 +152,30 @@
 
     &-description {
       width: 100%;
+    }
+  }
+}
+
+
+
+
+
+// # Tablet #2
+@media only screen and (max-width: 768px) {
+
+  .featured-info {
+    padding-bottom: 30rem;
+
+
+    button {
+      display: block;
+      @include addToCartBtn();
+    }
+  }
+
+  .featured-header {
+    button {
+      display: none;
     }
   }
 }

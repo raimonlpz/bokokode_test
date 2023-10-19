@@ -82,3 +82,28 @@
 }
 
 
+
+
+
+
+@media only screen and (max-width: 962px) {
+  .product.related {
+    margin-left: 0rem;
+    margin-right: 1rem;
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+  .product.related {
+    width: 120px !important;
+    height: 270px !important;
+  }
+
+  .product {
+    width: 70vw !important;
+    margin: 0;
+  }
+}
+
+
