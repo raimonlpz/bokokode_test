@@ -11,6 +11,8 @@ import { Category, OrderKey, OrderType } from 'src/app/models/types';
 })
 export class GridComponent implements OnInit {
 
+  public openModalCategoriesMobile = false;
+
   private categoriesSelected: Array<Category> = [];
   private orderSelected: { key: OrderKey, type: OrderType } = { key: 'price', type: 'ASC' };
 
@@ -31,9 +33,9 @@ export class GridComponent implements OnInit {
   searchByCategories(categories: Array<Category>): void {
     this.paginator.firstPage();
     this.categoriesSelected = categories;
-    this.searchProducts.emit({ 
+    this.searchProducts.emit({
       order: this.orderSelected,
-      categories, 
+      categories,
       page: 1
     });
   }
@@ -54,5 +56,15 @@ export class GridComponent implements OnInit {
       page: 1,
       order
     })
+  }
+
+
+  openFilterByCategoriesModal(): void {
+    console.log('hola?')
+    this.openModalCategoriesMobile = true;
+  }
+
+  closeFilterByCategoriesModal(): void {
+    this.openModalCategoriesMobile = false;
   }
 }

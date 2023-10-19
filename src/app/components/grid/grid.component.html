@@ -7,9 +7,20 @@
         <app-order (applyOrder)="searchByOrder($event)"></app-order>
     </div>
 
-    <div class="grid-categoriesMobile">
+    <div class="grid-categoriesMobile" (click)="openFilterByCategoriesModal()">
       <img src="../../../assets/filter.svg" alt="Filter by Categories" />
     </div>
+
+
+
+    <div class="grid-categoriesMobile-modal" *ngIf="openModalCategoriesMobile">
+      <div class="grid-categoriesMobile-modal__close" (click)="closeFilterByCategoriesModal()">
+        <img src="../../../assets/close.svg" alt="Close modal" />
+      </div>
+      <app-categories (searchByCategories)="searchByCategories($event)"></app-categories>
+    </div>
+
+
 
     <div class="grid-content">
 
