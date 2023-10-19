@@ -1,7 +1,11 @@
+@import "src/assets/scss/variables.scss";
+
+
+
 .cart-counter {
     width: 25px;
     height: 25px;
-    background-color: black;
+    background-color: $black;
     color: white;
     display: flex;
     justify-content: center;
@@ -14,15 +18,15 @@
 .cart-modal {
   width: 400px;
   height: 300px;
-  border: 2px solid black;
+  border: 2px solid $black;
   position: absolute;
   right: 210px;
   top: 75px;
   z-index: 100;
   display: none;
 
-  background-color: white;
-  border: 4px solid #E4E4E4;
+  background-color: $white;
+  border: 4px solid $lightgrey;
 
   &-content {
     width: 100%;
@@ -42,7 +46,7 @@
       justify-content: center;
       align-items: center;
 
-      color: #656565;
+      color: $darkgrey;
       font-style: italic;
       padding-bottom: 3rem;
     }
@@ -58,14 +62,14 @@
       text-transform: uppercase;
       font-size: 1.15rem;
       background: none;
-      border: 3px solid black;
+      border: 3px solid $black;
       transition: .6s all cubic-bezier(0.075, 0.82, 0.165, 1);
 
       &:hover {
         cursor: pointer;
 
-        background: black;
-        color: white;
+        background: $black;
+        color: $white;
       }
     }
 
@@ -73,7 +77,7 @@
     .divider {
       width: 85%;
       height: 3px;
-      background-color: #E4E4E4;
+      background-color: $lightgrey;
       position: absolute;
       bottom: 90px;
       left: 50%;
@@ -107,7 +111,7 @@
 
           span:nth-child(2) {
             font-size: 1.35rem;
-            color: #656565;
+            color: $darkgrey;
             margin-top: .5rem;
           }
         }
